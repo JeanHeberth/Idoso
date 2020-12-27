@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/modeloSistema.xhtml">
+
+
+	<ui:define name="topo">
+		<ui:include src="/includes/topoPrincipal.html" />
+	</ui:define>
+
+	<ui:define name="menu">
+		<ui:include src="/includes/menuPrincipal.xhtml" />
+	</ui:define>
+
+	<ui:define name="conteudo">
+
+		<p:tabView class="tab">
+
+			<!-- Cuidador 1 -->
+			<p:tab title="Informações do contratante">
+				<h:panelGrid columns="2" cellpadding="10">
+					<h:panelGroup>
+						<h:outputText
+							value=" Preciso de um profissional experiente
+                                              com pessoa acima de 80 anos pois meu avo nao tem capacidade
+                                              de andar e nao tenho disponibilidade para tratar dele durante o dia.
+                                              Precisa-se de profissional para atuar durante o periodo da tarde durante 20 dias,
+                                              pois estaria indisponivel neste periodo na data de 08/03 ate 28/03." />
+
+					</h:panelGroup>
+				</h:panelGrid>
+
+			</p:tab>
+		</p:tabView>
+
+		<p:tabView class="tab">
+
+			<!-- Cuidador 2 -->
+			<p:tab title="Informações do contratante">
+				<h:panelGrid columns="2" cellpadding="10">
+					<h:panelGroup>
+						<h:outputText
+							value=" Precisa-se de um profissional que tenha experiência em tratar pacientes acamado,
+                                              realizar a troca da sonda, colocar a medicação e alimentar o paciente" />
+
+					</h:panelGroup>
+				</h:panelGrid>
+			</p:tab>
+		</p:tabView>
+
+		<p:tabView class="tab">
+
+			<!-- Cuidador 3 -->
+			<p:tab title="Informações do contratante">
+				<h:panelGrid columns="2" cellpadding="10">
+					<h:panelGroup>
+						<h:outputText
+							value=" Preciso de um profissional experiente
+                                              com pessoa acima de 80 anos pois meu avo nao tem capacidade
+                                              de andar e nao tenho disponibilidade para tratar dele durante o dia.
+                                              Precisa-se de profissional para atuar durante o periodo da tarde durante 20 dias,
+                                              pois estaria indisponivel neste periodo na data de 08/03 ate 28/03." />
+
+					</h:panelGroup>
+				</h:panelGrid>
+			</p:tab>
+		</p:tabView>
+	</ui:define>
+
+</ui:composition>

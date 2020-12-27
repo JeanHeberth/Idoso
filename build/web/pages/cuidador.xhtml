@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/modeloSistema.xhtml">
+
+	<ui:define name="topo">
+
+	</ui:define>
+
+	<ui:define name="menu">
+		<ui:include src="/includes/menuPrincipal.xhtml" />
+	</ui:define>
+
+
+	<ui:define name="conteudo">
+
+		<h3 style="margin-top: 0" align="center">Nossos Cuidadores</h3>
+
+		<p:panelGrid columns="2"
+			style="float: left; margin-left: 5px;text-align: center;margin-top: 8px;">
+			<f:facet name="header">
+				<a href="curriculo.xhtml" target="_blank"> 
+				<img src="../resources/img/samantha.jpg" />
+				</a>
+			</f:facet>
+
+			<h:outputText value="Nome:" />
+			<h:outputText value="Samantha Antunes" />
+
+			<p:outputLabel value="Idade:" />
+			<p:outputLabel value="26 anos" />
+
+			<p:outputLabel for="data1" value="Data:" />
+			<p:calendar id="data1" pattern="dd/MM/yyyy" showIcon="true" />
+
+		</p:panelGrid>
+
+		<p:panelGrid columns="2"
+			style="margin-left: 5px; float: left; text-align: center;margin-top: 8px;">
+			<f:facet name="header">
+				<a href="curriculo.xhtml" target="_blank"> <img	src="../resources/img/elizabeth.jpg" />
+				</a>
+			</f:facet>
+
+			<h:outputText value="Nome:" />
+			<h:outputText value="Elizabeth Taylor" />
+
+			<p:outputLabel value="Idade:" />
+			<p:outputLabel value="29 anos" />
+
+			<p:outputLabel for="data2" value="Data:" />
+			<p:calendar id="data2" pattern="dd/MM/yyyy" mask="true" locale="br" />
+		</p:panelGrid>
+
+		<p:panelGrid columns="2"
+			style="margin-left:5px ;float: left; text-align: center;margin-top: 8px;">
+			<f:facet name="header">
+				<a href="curriculo.xhtml" target="_blank"> <img
+					src="../resources/img/josefina.jpg" />
+				</a>
+			</f:facet>
+
+			<h:outputText value="Nome:" />
+			<h:outputText value="Josefina Assis" />
+
+			<h:outputText value="Idade:" />
+			<h:outputText value="22 anos" />
+
+			<p:outputLabel for="data3" value="Data:" />
+			<p:calendar id="data3" pattern="dd/MM/yyyy" mask="true" locale="br" />
+		</p:panelGrid>
+
+	</ui:define>
+</ui:composition>

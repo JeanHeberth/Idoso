@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/modeloSistema.xhtml">
+
+
+	<ui:define name="topo">
+		<ui:include src="/includes/topoPrincipal.html" />
+	</ui:define>
+
+	<ui:define name="menu">
+		<ui:include src="/includes/menuPrincipal.xhtml" />
+	</ui:define>
+
+	<ui:define name="conteudo">
+
+		<h:form>
+			<!-- <h1 style="text-align: center">Corpo Cl�nico</h1> -->
+			<p:tabView class="tab">
+
+				<!-- Cuidador 1 -->
+				<p:tab title="Cuidador">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:panelGroup>
+							<h:graphicImage library="img" name="samantha.jpg" alt="Samantha" />
+							<h3 style="text-align: center">Samantha Alves</h3>
+							<h:outputText />
+
+						</h:panelGroup>
+						<h:outputText 
+							value="Samantha nascida: Recife,  Idade: 26 anos, 
+                                    trabalho como cuidadora a 5 anos, sou t�cnica em enfermagem tenho experi�ncia com pessoas como cadeirantes
+                                    (j� cuidei de 7 pessoas com essa necessidade), sou atenciosa gosto de cuidador dos meus clientes como se 
+                                    estivesse cuidado dos meus pr�prios pais." />
+					</h:panelGrid>
+
+				</p:tab>
+
+				<p:tab title="Valores">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:panelGroup>
+							<h:graphicImage library="img" name="samantha.jpg" alt="Samantha" />
+							<h3 style="text-align: center">Samantha Alves</h3>
+							<h:outputText />
+						</h:panelGroup>
+						<h:outputText
+							value="
+                                    Meio per�odo: R$: 75,00 /  
+                                    Per�odo integral: R$ 100,00  / 
+                                    Sem possibilidade de dormir no local." />
+					</h:panelGrid>
+				</p:tab>
+
+				<p:tab title="Avaliações">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:panelGroup>
+							<h:graphicImage library="img" name="samantha.jpg" alt="Samantha" />
+							<h3 style="text-align: center">Samantha Alves</h3>
+							<h:outputText />
+						</h:panelGroup>
+						<h:outputText
+							value="A Sra. Samantha trabalhou conosco na fun��o 
+                                    acompanhante (acompanhando pacientes nas rotinas di�rias,
+                                    ministrando rem�dios com prescri��o m�dica e cuidando da higiene pessoal),
+                                    e tamb�m na fun��o de motorista(levando paciente at� a cl�nica de hemodi�lise e passeios),
+                                    nos quais demonstrou compet�ncia profissional e lealdade. A aten��o e o cuidado s�o excelentes, trazendo tranquilidade. Estamos muito satisfeitos" />
+					</h:panelGrid>
+				</p:tab>
+
+			</p:tabView>
+
+
+
+			<!-- Cuidador 2 -->
+
+			<p:tabView class="tab">
+				<p:tab title="Cuidador">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:panelGroup>
+							<h:graphicImage library="img" name="elizabeth.jpg" alt="Samantha" />
+							<h3 style="text-align: center">Elizabeth Taylor</h3>
+							<h:outputText />
+						</h:panelGroup>
+						<h:outputText
+							value="Elizabeth 
+                                    Nascida: Distrito Federal(DF)
+                                    Idade: 36 anos 
+                                    Forma��o: Enfermagem;
+                                    Curso de cuidados p�s AVC
+                                    Trabalho como cuidadora a 12 anos vendo a necessidade que algumas fam�lias sofrem quando
+                                    seus entes queridos sofrem AVC busquei me especializar nessa �rea, sou atenciosa e prepara caso a situa��o do mesmo se agrave" />
+					</h:panelGrid>
+				</p:tab>
+
+				<p:tab title="Valores">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:panelGroup>
+							<h:graphicImage library="img" name="elizabeth.jpg" alt="Samantha" />
+							<h3 style="text-align: center">Elizabeth Taylor</h3>
+							<h:outputText />
+						</h:panelGroup>
+						<h:outputText
+							value="Di�ria R$: 300,00 /
+                                    Per�odo R$: 150,00 /
+                                    Pacote 24: R$: 500,00" />
+					</h:panelGrid>
+				</p:tab>
+
+				<p:tab title="Avalia��es">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:panelGroup>
+							<h:graphicImage library="img" name="elizabeth.jpg" alt="Samantha" />
+							<h3 style="text-align: center">Elizabeth Taylor</h3>
+							<h:outputText />
+						</h:panelGroup>
+						<h:outputText
+							value="Fui muito bem atendida com um trabalho de qualidade. Valeu a pena!" />
+					</h:panelGrid>
+				</p:tab>
+
+			</p:tabView>
+
+
+			<!-- Cuidador 3 -->
+			<p:tabView class="tab">
+				<p:tab title="Cuidador">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:panelGroup>
+							<h:graphicImage library="img" name="josefina.jpg" alt="Samantha" />
+							<h3 style="text-align: center">Josefina Alves</h3>
+							<h:outputText />
+						</h:panelGroup>
+						<h:outputText
+							value=" Tenho curso T�cnico em Auxiliar de Enferemagem e curso de Cuidador de Idosos.
+                                    Viv�ncia de 2 anos com pacientes acamados com AVC, Alzheimer e Dem�ncia." />
+					</h:panelGrid>
+				</p:tab>
+
+				<p:tab title="Valores">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:panelGroup>
+							<h:graphicImage library="img" name="josefina.jpg" alt="Samantha" />
+							<h3 style="text-align: center">Josefina Alves</h3>
+							<h:outputText />
+						</h:panelGroup>
+						<h:outputText
+							value="Meio per�odo: R$: 50,00 /  
+                                    Per�odo integral: R$ 120,00  / 
+                                    Possibilidade de dormir no local." />
+					</h:panelGrid>
+				</p:tab>
+
+				<p:tab title="Avalia��es">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:panelGroup>
+							<h:graphicImage library="img" name="josefina.jpg" alt="Samantha" />
+							<h3 style="text-align: center">Josefina Alves</h3>
+							<h:outputText />
+						</h:panelGroup>
+						<h:outputText value="Sem avalia��es no momento." />
+					</h:panelGrid>
+				</p:tab>
+			</p:tabView>
+		</h:form>
+
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,263 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/modeloSistema.xhtml">
+
+
+    <ui:define name="topo">
+        <ui:include src="/includes/topoPrincipal.html" />
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="/includes/menuPrincipal.xhtml" />
+    </ui:define>
+
+    <ui:define name="conteudo">
+
+        <f:event listener="#{MBServicos.carregarListagem}"
+                 type="preRenderView" />
+
+        <h:form id="frmListagem">
+            <p:dataTable
+                emptyMessage="Nenhum registro encontrado."
+                value="#{MBServicos.servicos}" var="servicosPaciente"
+                filterBy="#{MBServicos.servicosFiltrados}"
+                rowKey="nomeResponsavel">
+
+                <f:facet name="header">
+                    <div style="text-align: center">ServiÃ§os Contratados</div>
+                </f:facet>
+
+                <p:column headerText="Nome da contratante">
+                    <h:outputText value="#{servicosPaciente.paciente.nomeResponsavel}" />
+                </p:column>
+
+
+                <p:column headerText="Nome da idosa">
+                    <h:outputText value="#{servicosPaciente.paciente.nomePaciente}" />
+                </p:column>
+
+                <p:column headerText="Cuidador(a)">
+                    <h:outputText value="#{servicosPaciente.cuidador.nome}" />
+                </p:column>
+
+                <p:column headerText="HorÃ¡rio">
+                    <h:outputText value="#{servicosPaciente.horario}" />
+                </p:column>
+
+
+                <p:column headerText="ObservaÃ§Ãµes">
+                    <h:outputText value="#{servicosPaciente.observacoes}" />
+                </p:column>
+
+                <p:column headerText="Status">
+                    <p:commandButton style="background: red; margin-left: 80px"
+                                     icon="ui-icon-cancel" />
+
+                </p:column>
+
+                <p:column headerText="OpniÃµes">
+                    <p:commandButton style="margin-left: 60px" icon="ui-icon-pencil"
+                                     actionListener="#{MBServicos.prepararNovo}"
+                                     oncomplete="PF('dlgServEditar').show()">
+                        <f:setPropertyActionListener target="#{MBServicos.paciente}"
+                                                     value="#{servicosPaciente}" />
+                    </p:commandButton>
+                    <p:commandButton icon="ui-icon-closethick"
+                                     oncomplete="PF('novoConfirmacaoExclusao').show()" >
+                        <f:setPropertyActionListener target="#{MBServicos.paciente}" value="#{servicosPaciente}" />
+                    </p:commandButton>
+                </p:column>
+
+            </p:dataTable>
+        </h:form>
+
+
+        <p:dialog widgetVar="dlgServEditar" header="Alterar ServiÃ§o"
+                  draggable="false" resizable="false" responsive="true" modal="true"
+                  appendTo="@(body)">
+
+            <h:form id="frmEditarServicos">
+                <div class="ui-fluid">
+                    <p:panelGrid columns="2" layout="grid"
+                                 styleClass="panelgrid-noborder"
+                                 columnClasses="ui-grid-col-4, ui-grid-col-8">
+
+                        <p:outputLabel value="Nome do responsÃ¡vel" />
+                        <h:outputText  value="#{MBServicos.paciente.nomeResponsavel}" />
+
+
+                        <p:outputLabel value="Nome Paciente" />
+                        <p:inputText id="NomePaciente" value="#{MBServicos.paciente.nomePaciente}" />
+
+                        <p:outputLabel value="Telefone" />
+                        <p:inputText id="telefone" value="#{MBServicos.paciente.telefone}" />
+
+                        <p:outputLabel value="Email" />
+                        <p:inputText id="email" value="#{MBServicos.paciente.email}" />
+
+
+                    </p:panelGrid>
+
+
+                    <p:panelGrid>
+                        <p:growl id="growl" life="2000" />
+                        <p:commandButton icon="ui-icon-disk" update="growl"
+                                         value="Alterar informaÃ§Ãµes"
+                                         onclick="PF('novoStatusDialog').hide();"
+                                         actionListener="#{MBServicos.editar}" />
+                    </p:panelGrid>
+                </div>
+            </h:form>
+        </p:dialog>
+
+        <p:dialog widgetVar="novoConfirmacaoExclusao" header="Excluir ServiÃ§o"
+                  resizable="false" responsive="true" draggable="false" modal="true"
+                  appendTo="@(body)">
+
+            <h:form>
+                <div class="fluid">
+                    <p:panelGrid>
+                        <p:growl id="grwl" life="2000" />
+                        <p:commandButton style="background: greenyellow"
+                                         icon=" ui-icon-check" update="grwl"
+                                         onclick="PF('novoConfirmacaoExclusao')hide();"
+                                         action="#{MBmensagem.excluir()}" />
+                        <p:commandButton style="float: right; background: red"
+                                         icon=" ui-icon-closethick" update="grwl"
+                                         onclick="PF('novoConfirmacaoExclusao')hide();"
+                                         action="#{MBmensagem.cancelar()}" />
+                    </p:panelGrid>
+                </div>
+            </h:form>
+        </p:dialog>
+    </ui:define>
+=======
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/modeloSistema.xhtml">
+
+
+	<ui:define name="topo">
+		<ui:include src="/includes/topoPrincipal.html" />
+	</ui:define>
+
+	<ui:define name="menu">
+		<ui:include src="/includes/menuPrincipal.xhtml" />
+	</ui:define>
+
+	<ui:define name="conteudo">
+
+		<f:event listener="#{MBServicos.carregarListagem}"
+			type="preRenderView" />
+
+		<h:form>
+			<p:dataTable value="#{MBServicos.itens}" var="servicos"
+				rowKey="nomeResponsavel">
+
+				<f:facet name="header">
+					<div style="text-align: center">Serviços Contratados</div>
+				</f:facet>
+
+				<p:column headerText="Nome da contratante">
+					<h:outputText value="#{servicos.paciente.nomeResponsavel}" />
+				</p:column>
+
+
+				<p:column headerText="Nome da idosa">
+					<h:outputText value="#{servicos.paciente.nomePaciente}" />
+				</p:column>
+
+				<p:column headerText="Cuidador(a)">
+					<h:outputText value="#{servicos.cuidador.nome}" />
+				</p:column>
+
+				<p:column headerText="Horário">
+					<h:outputText value="#{servicos.horario}" />
+				</p:column>
+
+
+				<p:column headerText="Observações">
+					<h:outputText value="#{servicos.observacoes}" />
+				</p:column>
+
+				<p:column headerText="Status">
+					<p:commandButton style="background: red; margin-left: 80px"
+						icon="ui-icon-cancel" />
+
+				</p:column>
+
+				<p:column headerText="Opções">
+					<p:commandButton style="margin-left: 60px" icon="ui-icon-pencil"
+						oncomplete="PF('dlgServEditar').show()" />
+					<p:commandButton icon="ui-icon-closethick"
+						oncomplete="PF('novoConfirmacaoExclusao').show()" />
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
+
+
+		<p:dialog widgetVar="dlgServEditar" header="Alterar serviço"
+			draggable="false" resizable="false" responsive="true" modal="true"
+			appendTo="@(body)">
+
+			<h:form id="frmEditarServicos">
+				<div class="ui-fluid">
+					<p:panelGrid columns="2" layout="grid"
+						styleClass="panelgrid-noborder"
+						columnClasses="ui-grid-col-4, ui-grid-col-8">
+
+
+
+						<p:outputLabel value="Horário" />
+						<p:inputText id="horario" value="#{MBServicos.servicos.horario}" />
+
+						<p:outputLabel value="Observações" />
+						<p:inputText id="observacoes" value="#{MBServicos.servicos.observacoes}" />
+
+
+						<p:growl id="growl" life="2000" />
+						<p:commandButton icon="ui-icon-disk" update="growl"
+							value="Alterar informações"
+							onclick="PF('novoStatusDialog').hide();"
+							action="#{MBServicos.editar}" />
+					</p:panelGrid>
+				</div>
+			</h:form>
+		</p:dialog>
+
+		<p:dialog widgetVar="novoConfirmacaoExclusao" header="Excluir Serviço"
+			resizable="false" responsive="true" draggable="false" modal="true"
+			appendTo="@(body)">
+
+			<h:form>
+				<div class="fluid">
+					<p:panelGrid>
+						<p:growl id="grwl" life="2000" />
+						<p:commandButton style="background: greenyellow"
+							icon=" ui-icon-check" update="grwl"
+							onclick="PF('novoConfirmacaoExclusao')hide();"
+							action="#{MBmensagem.excluir()}" />
+						<p:commandButton style="float: right; background: red"
+							icon=" ui-icon-closethick" update="grwl"
+							onclick="PF('novoConfirmacaoExclusao')hide();"
+							action="#{MBmensagem.cancelar()}" />
+					</p:panelGrid>
+				</div>
+			</h:form>
+		</p:dialog>
+	</ui:define>
+>>>>>>> origin/master
+
+</ui:composition>

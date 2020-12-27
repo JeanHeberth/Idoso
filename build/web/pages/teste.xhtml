@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/modeloSistema.xhtml">
+
+	<ui:define name="topo">
+		<ui:include src="/includes/topoPrincipal.html" />
+	</ui:define>
+
+	<ui:define name="menu">
+		<ui:include src="/includes/menuPrincipal.xhtml" />
+	</ui:define>
+
+
+	<ui:define name="conteudo">
+
+		<h:form>
+			<p:dataTable emptyMessage="Nenhum registro encontrado."
+				value="#{MBCuidador.itensCuidadores}" var="itemCuidador"
+				paginator="true" rows="10">
+
+				<p:column headerText="Cpf" sortBy="#{itemCuidador.cpf}">
+					<h:outputText value="#{itemCuidador.cpf}" />
+				</p:column>
+
+				<p:column headerText="Nome" sortBy="#{itemCuidador.nome}">
+					<h:outputText value="#{itemCuidador.nome}" />
+				</p:column>
+
+				<p:column headerText="Telefone" sortBy="#{itemCuidador.telefone}">
+					<h:outputText value="#{itemCuidador.telefone}" />
+				</p:column>
+
+				<p:column headerText="E-mail" sortBy="#{itemCuidador.email}">
+					<h:outputText value="#{itemCuidador.email}" />
+				</p:column>
+
+				<p:column headerText="Cursos" sortBy="#{itemCuidador.cursos}">
+					<h:outputText value="#{itemCuidador.cursos}" />
+				</p:column>
+
+
+
+
+
+
+
+
+
+
+
+			</p:dataTable>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
